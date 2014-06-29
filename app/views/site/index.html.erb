@@ -20,8 +20,9 @@
 </div>
 
 <div class="container">
-  <div class="alert alert-warning">
-    <%= flash.map {|name, message| "#{name}: #{message}"}.join("; ") %>
+  <div class="alert alert-warning alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+    <strong>Warning!</strong> <%= flash.map {|name, message| "#{name}: #{message}"}.join("; ") %>
   </div>
 
   <div class="starter-template">
