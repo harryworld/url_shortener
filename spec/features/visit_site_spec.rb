@@ -6,6 +6,11 @@ feature 'visit the site' do
     expect(page).to have_content 'Hi, there!'
   end
 
+  scenario 'see this year 2014' do
+    visit '/'
+    expect(page).to have_content '2014'
+  end
+
   scenario 'show HTML page' do
     visit '/'
     expect(page).to have_selector('html')
