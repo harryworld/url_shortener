@@ -7,6 +7,6 @@ feature 'Visit URL page' do
       fill_in 'url', :with => 'http://www.google.com/'
       click_on 'Submit'
     end
-    expect(page).to have_content 'Success'
+    expect(current_path).to eq('/')
   end
 end

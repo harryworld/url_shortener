@@ -9,7 +9,7 @@ class UrlController < ApplicationController
     @url.original = params[:original]
 
     if @url.save
-      render :show
+      redirect_to root_path
     else
       render :text, "Error"
     end
