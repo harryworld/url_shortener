@@ -1,5 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Url, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "is valid with a url" do
+    url = Url.new
+    url.original = "http://www.google.com/"
+    url.save
+    expect(url).to be_valid
+  end
 end
