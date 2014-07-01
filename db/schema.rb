@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20140701174209) do
   create_table "urls", force: true do |t|
     t.string   "original"
     t.string   "converted"
+    t.integer  "count"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
