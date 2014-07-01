@@ -5,7 +5,14 @@ class UrlController < ApplicationController
   end
 
   def create
-    render :show
+    @url = Url.new
+    @url.original = params[:original]
+
+    if @url.save
+      render :show
+    else
+      render :text, "Error"
+    end
   end
 
 end
