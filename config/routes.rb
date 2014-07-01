@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get 'terms'   => 'site#terms'
 
   get  'url'    => 'url#index'
+  post 'url'    => 'url#create'
 end
