@@ -17,11 +17,16 @@ feature 'Visit URL page' do
   end
 
   scenario 'see the title' do
-    visit '/url'
+    visit '/'
     within("#link") do
       fill_in 'url', :with => 'http://www.google.com/'
       click_on 'Submit'
     end
     expect(current_path).to eq('/url')
+  end
+
+  scenario 'list the urls' do
+    visit '/url'
+    expect(page).to have_content 'URL List'
   end
 end

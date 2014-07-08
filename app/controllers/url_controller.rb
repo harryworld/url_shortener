@@ -2,6 +2,7 @@ class UrlController < ApplicationController
   protect_from_forgery with: :null_session
 
   def index
+    @urls = Url.all
   end
 
   def create
