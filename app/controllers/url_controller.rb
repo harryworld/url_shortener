@@ -6,10 +6,11 @@ class UrlController < ApplicationController
 
   def create
     @url = Url.new
-    @url.original = params[:original]
+    @url.original = params[:url]
+    @url.converted = params[:url]
 
     if @url.save
-      redirect_to root_path
+      render :show
     else
       render :text, "Error"
     end
