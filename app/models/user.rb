@@ -3,4 +3,10 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  def full_name
+    unless self.first_name.nil?
+      self.first_name + ' ' + self.last_name
+    end
+  end
 end
